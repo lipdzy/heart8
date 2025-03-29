@@ -3,38 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Declaração de Amor</title>
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
     <style>
-
         * {
-
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
-
-        
-
         body {
-
             background-color: rgb(0, 0, 0);
             color: white;
             overflow: hidden;
             position: relative;
             height: 100vh;
             width: 100vw;
-
         }
-
-        
-
         .page {
-
             position: absolute;
             top: 0;
             left: 0;
@@ -49,52 +34,31 @@
             opacity: 0;
             transition: opacity 1s ease;
             z-index: 1;
-            overflow-y: auto;
-
         }
-
-        
         .active {
-
             opacity: 1;
             z-index: 10;
-
         }
-
-        
         .stars {
-
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: 0;
-
         }
-
-        
-
         .star {
-
             position: absolute;
             background-color: white;
             border-radius: 50%;
-
         }
-
-        
         .heart {
-
             position: absolute;
             color: rgb(248, 9, 9);
             font-size: 30px;
             animation: float 10s infinite ease-in-out;
             z-index: 0;
-
         }
-
-        
         @keyframes float {
             0%, 100% {
                 transform: translateY(0) rotate(0deg);
@@ -103,36 +67,24 @@
                 transform: translateY(-20px) rotate(10deg);
             }
         }
-
-        
         h1 {
-            font-size: 1.0rem;
+            font-size: 1.5rem;
             margin-bottom: 30px;
             color: #ffffff;
             text-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
-
         }
-
-        
         h2 {
             font-size: 1.5rem;
             margin-bottom: 20px;
             color: #ffffff;
             text-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
-
         }
-
-        
-
         p {
             font-size: 1.2rem;
             margin-bottom: 20px;
             max-width: 600px;
             line-height: 1.6;
-
         }
-
-        
         .btn {
             display: inline-block;
             padding: 12px 24px;
@@ -140,101 +92,48 @@
             color: rgb(0, 0, 0);
             border: none;
             border-radius: 25px;
-            font-size: 0.8rem;
+            font-size: 1rem;
             cursor: pointer;
             margin: 10px;
             text-decoration: none;
             box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
             transition: all 0.3s ease;
-
         }
-
-        
-
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
         }
-
-        
         .photo-container {
-            width: 280px;
-            height: 280px;
+            width: 300px;
+            height: 300px;
             border-radius: 15px;
             overflow: hidden;
             margin: 20px 0;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
             position: relative;
-
         }
-
-        
-        @media (min-width: 768px) {
-            .photo-container {
-                width: 300px;
-                height: 300px;
-            }
-        }
-
-        
         .photo-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
-        
-        .file-upload {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            z-index: 2;
-        }
-
-        
-        .file-upload input {
-            display: none;
-        }
-
-        
-        .file-upload-icon {
-            color: white;
-            font-size: 20px;
-        }
-
-        
-
         .options {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin-top: 20px;
         }
-
-        
         .timer {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 30px 0;
         }
-
-    
         .timer div {
             margin: 10px 0;
             font-size: 1.3rem;
-            color: #ff69b4;
+            color: #ffffff;
         }
-
-        
         .spotify-embed {
             width: 280px;
             height: 80px;
@@ -243,27 +142,14 @@
             overflow: hidden;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
         }
-
-        
         .heart-animation-container {
             width: 100%;
-            height: 300px;
+            height: 400px;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 20px 0;
         }
-
-        
-
-        @media (min-width: 768px) {
-            .heart-animation-container {
-                height: 400px;
-            }
-        }
-
-        
-
         .heart-animation-iframe {
             width: 100%;
             height: 100%;
@@ -271,8 +157,6 @@
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(255, 105, 180, 0.7);
         }
-
-        
         .meteor {
             position: absolute;
             width: 2px;
@@ -282,8 +166,6 @@
             top: 0;
             z-index: 0;
         }
-
-        
         @keyframes meteor {
             0% {
                 transform: translateX(0) translateY(0);
@@ -294,303 +176,42 @@
                 opacity: 0;
             }
         }
-
-        
-        .settings-panel {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.95);
-            padding: 20px;
-            z-index: 100;
-            display: none;
-            overflow-y: auto;
-        }
-
-        
-        .settings-toggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background: rgba(255, 105, 180, 0.7);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            z-index: 101;
-            font-size: 20px;
-            color: white;
-        }
-
-        
-        .settings-content {
-            max-width: 500px;
-            margin: 0 auto;
-            padding-top: 50px;
-        }
-
-        
-        .settings-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(255, 105, 180, 0.7);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            font-size: 20px;
-            color: white;
-        }
-
-        
-        .spotify-input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid #ff69b4;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            font-size: 16px;
-        }
-
-        
-        .date-input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid #ff69b4;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            font-size: 16px;
-        }
-
-        
         #python-heart {
             width: 100%;
-            height: 100%;
+            height: 400px;
             border: none;
             border-radius: 15px;
             box-shadow: none;
         }
-
         
-        .settings-section {
-            margin-bottom: 25px;
+        /* comentario do css */
+        .section-comment {
+            font-style: italic;
+            opacity: 0.7;
+            margin: 10px 0;
         }
-
-    
-
-        .settings-section h3 {
-            margin-bottom: 15px;
-            color: #ff69b4;
-        }
-
-        
-
-        .file-input-container {
-            position: relative;
-            margin-bottom: 15px;
-        }
-
-        
-        .file-input-label {
-            display: block;
-            padding: 12px;
-            background: rgba(255, 105, 180, 0.3);
-            border: 1px solid #ff69b4;
-            border-radius: 5px;
-            color: white;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        
-        .file-input {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-        
-
-        .preview-container {
-            width: 100%;
-            height: 150px;
-            margin-top: 10px;
-            border-radius: 5px;
-            overflow: hidden;
-            background: #111;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        
-
-        .preview-container img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            flex-direction: column;
-        }
-        
-        .loading-spinner {
-            border: 5px solid rgba(255, 105, 180, 0.3);
-            border-radius: 50%;
-            border-top: 5px solid #ff69b4;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin-bottom: 20px;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .site-id-container {
-            position: fixed;
-            bottom: 10px;
-            left: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-            color: #ff69b4;
-            z-index: 99;
-        }
-
     </style>
 </head>
-
 <body>
-    <!-- Overlay de carregamento -->
-    <div class="loading-overlay" id="loading-overlay">
-        <div class="loading-spinner"></div>
-        <p>Carregando suas configurações...</p>
-    </div>
-
-    <!-- Container para ID do site -->
-    <div class="site-id-container" id="site-id-container">
-        ID: <span id="site-id">...</span>
-        <button class="btn" style="padding: 3px 8px; margin: 0 0 0 10px; font-size: 10px;" onclick="copySiteId()">Copiar</button>
-    </div>
-
     <!-- Estrelas de fundo -->
     <div class="stars" id="stars"></div>
 
-    <!-- Botão de configurações -->
-    <div class="settings-toggle" onclick="toggleSettings()">⚙</div>
-
-    <!-- Painel de configurações -->
-    <div class="settings-panel" id="settings-panel">
-        <div class="settings-close" onclick="toggleSettings()">✕</div>
-        <div class="settings-content">
-            <h2 style="margin-bottom: 20px; color: #fdfdfd;">Configurações</h2>
-            
-            <div class="settings-section">
-                <h3>ID do Site</h3>
-                <p style="font-size: 14px; margin-bottom: 15px;">Use este ID para acessar o mesmo site em outros dispositivos:</p>
-                <div style="display: flex; margin-bottom: 15px;">
-                    <input type="text" id="config-site-id" class="spotify-input" style="margin-bottom: 0; margin-right: 10px;" placeholder="Digite o ID do site">
-                    <button class="btn" style="margin: 0; padding: 10px 15px;" onclick="loadSiteById()">Carregar</button>
-                </div>
-            </div>
-            
-            <div class="settings-section">
-                <h3>Música</h3>
-                <label for="spotify-url" style="display: block; margin-bottom: 8px;">URL do Spotify:</label>
-                <input type="text" id="spotify-url" class="spotify-input" placeholder="https://open.spotify.com/embed/track/ID_DA_MUSICA">
-            </div>
-            
-            <div class="settings-section">
-                <h3>Data do Relacionamento</h3>
-                <label for="relationship-date" style="display: block; margin-bottom: 8px;">Data de início do namoro:</label>
-                <input type="date" id="relationship-date" class="date-input">
-            </div>
-            
-            <div class="settings-section">
-                <h3>Sua Declaração</h3>
-                <label for="declaration-text" style="display: block; margin-bottom: 8px;">Mensagem de amor:</label>
-                <textarea id="declaration-text" class="spotify-input" style="height: 120px; resize: none;" placeholder="Digite sua declaração de amor aqui..."></textarea>
-            </div>
-            
-            <div class="settings-section">
-                <h3>Fotos</h3>
-                
-                <div class="file-input-container">
-                    <label for="photo1-upload" class="file-input-label">Selecionar Foto 1</label>
-                    <input type="file" id="photo1-upload" class="file-input" accept="image/*" onchange="previewImage(this, 'preview1'); loadAndSaveImage(this, 'character-photo1')">
-                    <div class="preview-container">
-                        <img id="preview1" src="" alt="Preview">
-                    </div>
-                </div>
-                
-                <div class="file-input-container">
-                    <label for="photo2-upload" class="file-input-label">Selecionar Foto do Casal</label>
-                    <input type="file" id="photo2-upload" class="file-input" accept="image/*" onchange="previewImage(this, 'preview2'); loadAndSaveImage(this, 'couple-photo')">
-                    <div class="preview-container">
-                        <img id="preview2" src="" alt="Preview">
-                    </div>
-                </div>
-                
-                <div class="file-input-container">
-                    <label for="photo3-upload" class="file-input-label">Selecionar Foto 3</label>
-                    <input type="file" id="photo3-upload" class="file-input" accept="image/*" onchange="previewImage(this, 'preview3'); loadAndSaveImage(this, 'character-photo2')">
-                    <div class="preview-container">
-                        <img id="preview3" src="" alt="Preview">
-                    </div>
-                </div>
-            </div>
-            
-            <button class="btn" style="width: 100%; margin: 20px 0;" onclick="saveSettings()">Salvar Configurações</button>
-        </div>
-    </div>
-
     <!-- Página 1 -->
     <div class="page active" id="page1">
-        <h1>Você é muito especial pra mim, por isso fiz essa surpresa:</h1>
+        <h1>Mais um ano de namoro juntos! ❤</h1>
         <button class="btn" onclick="showPage(2)">Clique aqui para continuar</button>
     </div>
 
     <!-- Página 2 -->
     <div class="page" id="page2">
         <div class="photo-container">
-            <img id="character-photo1" src="https://via.placeholder.com/500x300" alt="Personagem">
+            <!-- FOTO 1: Substituir o src pela URL da sua imagem -->
+            <img src="C:\Users\USER\OneDrive\Imagens\hello5.jpg" alt="Personagem">
         </div>
         <h2>Você gostaria de ouvir nossa música?</h2>
         <div class="options">
             <button class="btn" onclick="showPage(3)">Yes ❤</button>
-            <button class="btn" onclick="showPage(3)">Não 😡</button>
+            <button class="btn" onclick="showPage(3)">no 😡</button>
         </div>
     </div>
 
@@ -598,7 +219,8 @@
     <div class="page" id="page3">
         <h2>Te dedico cada verso dessa linda canção</h2>
         <div class="spotify-embed">
-            <iframe id="spotify-iframe" src="https://open.spotify.com/embed/track/4cOdK2wGLETKBW3PvgPWqT" width="100%" height="100%" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <!-- MÚSICA: Substituir o ID da música após /track/ -->
+            <iframe src="https://open.spotify.com/embed/track/4vgU9MGJwhgBEtlO8mMN49?utm_source=generator" width="100%" height="100%" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
         <button class="btn" onclick="showPage(4)">Clique aqui para continuar</button>
     </div>
@@ -606,9 +228,11 @@
     <!-- Página 4 -->
     <div class="page" id="page4">
         <div class="photo-container">
-            <img id="couple-photo" src="https://via.placeholder.com/500x300" alt="Foto do casal">
+            <!-- FOTO 2: Substitua o src pela URL da foto do casal -->
+            <img src="C:\Users\USER\OneDrive\Imagens\casalpint.jpg" alt="Foto do casal">
         </div>
-        <p id="declaration">
+        <!-- DECLARAÇÃO: Editar o texto abaixo para sua declaração -->
+        <p>
             Cada momento ao seu lado é especial. Você ilumina meus dias e faz meu coração bater mais forte. Obrigado(a) por compartilhar sua vida comigo e por me fazer tão feliz. Te amo infinitamente!
         </p>
         <button class="btn" onclick="showPage(5)">Clique para continuar</button>
@@ -617,12 +241,13 @@
     <!-- Página 5 -->
     <div class="page" id="page5">
         <div class="photo-container">
-            <img id="character-photo2" src="https://via.placeholder.com/500x300" alt="Personagem">
+            <!-- FOTO 3: Substituir o src pela URL da sua terceira imagem -->
+            <img src="C:\Users\USER\OneDrive\Imagens\hhspotify.jpg" alt="Personagem">
         </div>
         <h2>Você gostaria de ver a quanto tempo estamos juntos?</h2>
         <div class="options">
-            <button class="btn" onclick="showPage(6)">Sim 🥰</button>
-            <button class="btn" onclick="showPage(6)">Não 🥺</button>
+            <button class="btn" onclick="showPage(6)">yes 🥰</button>
+            <button class="btn" onclick="showPage(6)">no 🥺</button>
         </div>
     </div>
 
@@ -643,13 +268,14 @@
 
     <!-- Página 7 -->
     <div class="page" id="page7">
-        <h2> A seguir veja a declaração especial</h2>
+        <h2>veja declaração especial:</h2>
+    
         <button class="btn" onclick="showPage(8)">Clique para ver coração</button>
     </div>
 
     <!-- Página 8 (Nova página com o coração Python) -->
     <div class="page" id="page8">
-        <h2>Assim como esse coração, meu amor por você aumenta a cada dia!</h2>
+        <h2>Meu amor por você cresce a cada dia, assim como esse coração</h2>
         <div class="heart-animation-container" style="box-shadow: none;">
             <iframe id="python-heart" src="heart2.html" width="100%" height="100%" frameborder="0" style="box-shadow: none;"></iframe>
         </div>
@@ -657,101 +283,12 @@
     </div>
 
     <script>
-        // Configuração do Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyDqGXYZUFjXKXKPBXlN5UZcPDKA-LrQJLs",
-            authDomain: "love-declaration-app.firebaseapp.com",
-            databaseURL: "https://love-declaration-app-default-rtdb.firebaseio.com",
-            projectId: "love-declaration-app",
-            storageBucket: "love-declaration-app.appspot.com",
-            messagingSenderId: "1098765432",
-            appId: "1:1098765432:web:abcdef1234567890abcdef"
-        };
         
-        // Inicializar Firebase
-        firebase.initializeApp(firebaseConfig);
-        const database = firebase.database();
-        
+        // Data de início do relacionamento (formato: ano, mês-1, dia)
+        const DATA_INICIO_RELACIONAMENTO = new Date(2022, 0, 1); // 1 de janeiro de 2022
+
         // Variáveis globais
-        let relationshipStartDate = new Date(2022, 0, 1); // Padrão: 1 de janeiro de 2022
-        let siteId = '';
-        
-        // Gerar ID único para o site ou recuperar do localStorage
-        function generateOrGetSiteId() {
-            // Verificar se já existe um ID no localStorage
-            let existingId = localStorage.getItem('love_site_id');
-            
-            if (existingId) {
-                siteId = existingId;
-            } else {
-                // Gerar um ID aleatório de 8 caracteres
-                siteId = Math.random().toString(36).substring(2, 10);
-                localStorage.setItem('love_site_id', siteId);
-            }
-            
-            // Exibir o ID na interface
-            document.getElementById('site-id').textContent = siteId;
-        }
-        
-        // Função para copiar o ID do site para a área de transferência
-        function copySiteId() {
-            const siteIdText = document.getElementById('site-id').textContent;
-            
-            // Criar um elemento temporário para copiar o texto
-            const tempInput = document.createElement('input');
-            tempInput.value = siteIdText;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-            
-            // Feedback visual
-            const siteIdContainer = document.getElementById('site-id-container');
-            const originalText = siteIdContainer.innerHTML;
-            siteIdContainer.innerHTML = 'ID copiado!';
-            
-            setTimeout(() => {
-                siteIdContainer.innerHTML = originalText;
-            }, 2000);
-        }
-        
-        // Função para carregar site pelo ID
-        function loadSiteById() {
-            const inputId = document.getElementById('config-site-id').value.trim();
-            
-            if (!inputId) {
-                alert('Por favor, digite um ID válido.');
-                return;
-            }
-            
-            // Mostrar overlay de carregamento
-            document.getElementById('loading-overlay').style.display = 'flex';
-            
-            // Verificar se o ID existe no banco de dados
-            database.ref('sites/' + inputId).once('value')
-                .then((snapshot) => {
-                    if (snapshot.exists()) {
-                        // Salvar o novo ID no localStorage
-                        localStorage.setItem('love_site_id', inputId);
-                        siteId = inputId;
-                        document.getElementById('site-id').textContent = siteId;
-                        
-                        // Carregar os dados
-                        loadSettingsFromDatabase();
-                        
-                        // Fechar o painel de configurações
-                        toggleSettings();
-                    } else {
-                        alert('ID não encontrado. Verifique se digitou corretamente.');
-                        document.getElementById('loading-overlay').style.display = 'none';
-                    }
-                })
-                .catch((error) => {
-                    console.error("Erro ao carregar site pelo ID:", error);
-                    alert('Erro ao carregar o site. Tente novamente mais tarde.');
-                    document.getElementById('loading-overlay').style.display = 'none';
-                });
-        }
+        let relationshipStartDate = DATA_INICIO_RELACIONAMENTO;
 
         // Função para mostrar uma página específica
         function showPage(pageNumber) {
@@ -767,270 +304,27 @@
             }
         }
 
-        // Função para pré-visualizar imagem
-        function previewImage(input, previewId) {
-            if (input.files && input.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById(previewId).src = e.target.result;
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        // Função para carregar e salvar imagem
-        function loadAndSaveImage(input, imageId) {
-            if (input.files && input.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const imageData = e.target.result;
-                    // Exibir a imagem
-                    document.getElementById(imageId).src = imageData;
-                    
-                    // Salvar a imagem no localStorage como backup
-                    try {
-                        localStorage.setItem('love_' + imageId, imageData);
-                    } catch (error) {
-                        console.warn("Não foi possível salvar a imagem no localStorage (provavelmente muito grande)");
-                    }
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        // Função para mostrar/esconder painel de configurações
-        function toggleSettings() {
-            const panel = document.getElementById('settings-panel');
-            if (panel.style.display === 'block') {
-                panel.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            } else {
-                panel.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-                // Carregar valores atuais nos campos
-                loadCurrentSettingsToForm();
-            }
-        }
-
-        // Função para carregar configurações atuais no formulário
-        function loadCurrentSettingsToForm() {
-            // Carregar URL do Spotify
-            const spotifyUrl = document.getElementById('spotify-iframe').src;
-            if (spotifyUrl) {
-                document.getElementById('spotify-url').value = spotifyUrl;
-            }
-            
-            // Carregar data de início do relacionamento
-            if (relationshipStartDate) {
-                const dateString = relationshipStartDate.toISOString().split('T')[0];
-                document.getElementById('relationship-date').value = dateString;
-            }
-            
-            // Carregar texto da declaração
-            const declarationText = document.getElementById('declaration').textContent.trim();
-            if (declarationText) {
-                document.getElementById('declaration-text').value = declarationText;
-            }
-            
-            // Exibir o ID do site atual
-            document.getElementById('config-site-id').value = siteId;
-        }
-
-        // Substitua a função saveSettings atual por esta versão melhorada
-function saveSettings() {
-    // Mostrar overlay de carregamento
-    document.getElementById('loading-overlay').style.display = 'flex';
-    
-    // Obter valores dos campos
-    const spotifyUrl = document.getElementById('spotify-url').value;
-    const dateInput = document.getElementById('relationship-date').value;
-    const declarationText = document.getElementById('declaration-text').value;
-    
-    // Atualizar a interface
-    if (spotifyUrl) {
-        document.getElementById('spotify-iframe').src = spotifyUrl;
-    }
-    
-    if (dateInput) {
-        relationshipStartDate = new Date(dateInput);
-    }
-    
-    if (declarationText) {
-        document.getElementById('declaration').textContent = declarationText;
-    }
-    
-    // Preparar dados para salvar no banco de dados
-    const settingsData = {
-        spotifyUrl: spotifyUrl || document.getElementById('spotify-iframe').src,
-        relationshipDate: dateInput || (relationshipStartDate ? relationshipStartDate.toISOString() : ''),
-        declaration: declarationText || document.getElementById('declaration').textContent.trim(),
-        lastUpdated: new Date().toISOString()
-    };
-    
-    // Adicionar imagens ao objeto de dados
-    const imageIds = ['character-photo1', 'couple-photo', 'character-photo2'];
-    imageIds.forEach(id => {
-        const imgElement = document.getElementById(id);
-        if (imgElement && imgElement.src && !imgElement.src.includes('placeholder')) {
-            settingsData[id] = imgElement.src;
-        }
-    });
-    
-    // Definir um timeout para garantir que o overlay seja removido
-    const saveTimeout = setTimeout(() => {
-        document.getElementById('loading-overlay').style.display = 'none';
-        toggleSettings();
-        alert("Configurações salvas com sucesso! Seu ID único é: " + siteId);
-    }, 5000); // 5 segundos de timeout
-    
-    // Salvar no Firebase
-    database.ref('sites/' + siteId).set(settingsData)
-        .then(() => {
-            clearTimeout(saveTimeout); // Limpar o timeout se a operação for bem-sucedida antes do timeout
-            
-            // Esconder overlay de carregamento
-            document.getElementById('loading-overlay').style.display = 'none';
-            
-            // Fechar painel
-            toggleSettings();
-            
-            // Mostrar confirmação
-            alert("Configurações salvas com sucesso! Seu ID único é: " + siteId);
-        })
-        .catch((error) => {
-            clearTimeout(saveTimeout); // Limpar o timeout se ocorrer um erro antes do timeout
-            console.error("Erro ao salvar configurações:", error);
-            
-            // Esconder overlay de carregamento
-            document.getElementById('loading-overlay').style.display = 'none';
-            
-            // Tentar salvar no localStorage como fallback
-            try {
-                localStorage.setItem('love_spotify_url', settingsData.spotifyUrl);
-                localStorage.setItem('love_relationship_date', settingsData.relationshipDate);
-                localStorage.setItem('love_declaration', settingsData.declaration);
-                
-                alert("Não foi possível salvar na nuvem, mas suas configurações foram salvas localmente.");
-            } catch (e) {
-                alert("Erro ao salvar configurações. Por favor, tente novamente mais tarde.");
-            }
-        });
-}
-
-        // Função para carregar configurações do banco de dados
-        function loadSettingsFromDatabase() {
-            database.ref('sites/' + siteId).once('value')
-                .then((snapshot) => {
-                    const data = snapshot.val();
-                    
-                    if (data) {
-                        // Carregar URL do Spotify
-                        if (data.spotifyUrl) {
-                            document.getElementById('spotify-iframe').src = data.spotifyUrl;
-                        }
-                        
-                        // Carregar data de início do relacionamento
-                        if (data.relationshipDate) {
-                            relationshipStartDate = new Date(data.relationshipDate);
-                        }
-                        
-                        // Carregar texto da declaração
-                        if (data.declaration) {
-                            document.getElementById('declaration').textContent = data.declaration;
-                        }
-                        
-                        // Carregar imagens
-                        const imageIds = ['character-photo1', 'couple-photo', 'character-photo2'];
-                        imageIds.forEach(id => {
-                            if (data[id]) {
-                                document.getElementById(id).src = data[id];
-                                
-                                // Também atualizar as pré-visualizações nas configurações
-                                const previewId = id === 'character-photo1' ? 'preview1' : 
-                                                id === 'couple-photo' ? 'preview2' : 'preview3';
-                                if (document.getElementById(previewId)) {
-                                    document.getElementById(previewId).src = data[id];
-                                }
-                            }
-                        });
-                    } else {
-                        // Se não houver dados no banco, tentar carregar do localStorage
-                        loadSettingsFromLocalStorage();
-                    }
-                    
-                    // Esconder overlay de carregamento
-                    document.getElementById('loading-overlay').style.display = 'none';
-                })
-                .catch((error) => {
-                    console.error("Erro ao carregar configurações:", error);
-                    
-                    // Tentar carregar do localStorage como fallback
-                    loadSettingsFromLocalStorage();
-                    
-                    // Esconder overlay de carregamento
-                    document.getElementById('loading-overlay').style.display = 'none';
-                });
-        }
-
-        // Função para carregar configurações do localStorage (fallback)
-        function loadSettingsFromLocalStorage() {
-            // Carregar URL do Spotify
-            const spotifyUrl = localStorage.getItem('love_spotify_url');
-            if (spotifyUrl) {
-                document.getElementById('spotify-iframe').src = spotifyUrl;
-            }
-            
-            // Carregar data de início do relacionamento
-            const dateInput = localStorage.getItem('love_relationship_date');
-            if (dateInput) {
-                relationshipStartDate = new Date(dateInput);
-            }
-            
-            // Carregar texto da declaração
-            const declarationText = localStorage.getItem('love_declaration');
-            if (declarationText) {
-                document.getElementById('declaration').textContent = declarationText;
-            }
-            
-            // Carregar imagens
-            loadImagesFromLocalStorage();
-        }
-
-        // Função para carregar imagens do localStorage
-        function loadImagesFromLocalStorage() {
-            const imageIds = ['character-photo1', 'couple-photo', 'character-photo2'];
-            
-            imageIds.forEach(id => {
-                const savedImage = localStorage.getItem('love_' + id);
-                if (savedImage) {
-                    document.getElementById(id).src = savedImage;
-                    
-                    // Também atualizar as pré-visualizações nas configurações
-                    const previewId = id === 'character-photo1' ? 'preview1' : 
-                                     id === 'couple-photo' ? 'preview2' : 'preview3';
-                    if (document.getElementById(previewId)) {
-                        document.getElementById(previewId).src = savedImage;
-                    }
-                }
-            });
-        }
-
         // Criar estrelas de fundo
         function createStars() {
             const starsContainer = document.getElementById('stars');
             const numberOfStars = 200;
+
             for (let i = 0; i < numberOfStars; i++) {
                 const star = document.createElement('div');
                 star.classList.add('star');
+
                 // Tamanho aleatório para as estrelas
                 const size = Math.random() * 3;
                 star.style.width = size + 'px';
                 star.style.height = size + 'px';
+
                 // Posição aleatória
                 star.style.left = Math.random() * 100 + '%';
                 star.style.top = Math.random() * 100 + '%';
+
                 // Brilho aleatório
                 star.style.opacity = Math.random() * 0.8 + 0.2;
+
                 starsContainer.appendChild(star);
             }
         }
@@ -1040,18 +334,23 @@ function saveSettings() {
             setInterval(() => {
                 const meteor = document.createElement('div');
                 meteor.classList.add('meteor');
+
                 // Posição inicial aleatória
                 const startX = Math.random() * window.innerWidth + window.innerWidth/2;
                 const startY = Math.random() * window.innerHeight/2;
                 meteor.style.left = startX + 'px';
                 meteor.style.top = startY + 'px';
+
                 // Tamanho aleatório
                 const size = Math.random() * 150 + 50;
                 meteor.style.width = size + 'px';
+
                 // Duração aleatória
                 const duration = Math.random() * 2 + 1;
                 meteor.style.animationDuration = duration + 's';
+
                 document.body.appendChild(meteor);
+
                 // Remover o meteoro após a animação
                 setTimeout(() => {
                     meteor.remove();
@@ -1064,6 +363,7 @@ function saveSettings() {
             function updateTimer() {
                 const now = new Date();
                 const diff = now - relationshipStartDate;
+
                 // Cálculo básico de todas as unidades
                 const seconds = Math.floor(diff / 1000);
                 const minutes = Math.floor(seconds / 60);
@@ -1090,51 +390,14 @@ function saveSettings() {
                 document.getElementById('minutes').textContent = remainingMinutes + ' min';
                 document.getElementById('seconds').textContent = remainingSeconds + (remainingSeconds === 1 ? ' segundo' : ' segundos');
             }
+
             // Atualizar a cada segundo
             setInterval(updateTimer, 1000);
             updateTimer(); // Iniciar imediatamente
         }
 
-        // Verificar se o Firebase está disponível
-        function checkFirebaseConnection() {
-            return new Promise((resolve, reject) => {
-                const connectedRef = database.ref(".info/connected");
-                connectedRef.on("value", (snap) => {
-                    if (snap.val() === true) {
-                        resolve(true);
-                    } else {
-                        resolve(false);
-                    }
-                });
-                
-                // Timeout após 5 segundos
-                setTimeout(() => {
-                    resolve(false);
-                }, 5000);
-            });
-        }
         // Inicializar tudo quando a página carregar
-        window.onload = async function() {
-            // Gerar ou obter ID do site
-            generateOrGetSiteId();
-            
-            // Mostrar overlay de carregamento
-            document.getElementById('loading-overlay').style.display = 'flex';
-            
-            // Verificar conexão com Firebase
-            const isConnected = await checkFirebaseConnection();
-            
-            if (isConnected) {
-                // Carregar configurações do banco de dados
-                loadSettingsFromDatabase();
-            } else {
-                console.warn("Sem conexão com o Firebase, usando localStorage como fallback");
-                // Carregar do localStorage como fallback
-                loadSettingsFromLocalStorage();
-                // Esconder overlay de carregamento
-                document.getElementById('loading-overlay').style.display = 'none';
-            }
-            
+        window.onload = function() {
             createStars();
             createMeteors();
             calculateRelationshipTime();
