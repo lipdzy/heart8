@@ -18,6 +18,49 @@ function showPage(pageNumber) {
     }
 }
 
+// Função para carregar configurações do localStorage (fallback)
+function loadSettingsFromLocalStorage() {
+    // Carregar URL do Spotify
+    const spotifyUrl = localStorage.getItem('love_spotify_url');
+    if (spotifyUrl) {
+        document.getElementById('spotify-iframe').src = spotifyUrl;
+    }
+    
+    // Carregar data de início do relacionamento
+    const dateInput = localStorage.getItem('love_relationship_date');
+    if (dateInput) {
+        relationshipStartDate = new Date(dateInput);
+    }
+    
+    // Carregar texto da declaração
+    const declarationText = localStorage.getItem('love_declaration');
+    if (declarationText) {
+        document.getElementById('declaration').textContent = declarationText;
+    }
+    
+    // Carregar imagens
+    loadImagesFromLocalStorage();
+}
+
+// Função para carregar imagens do localStorage
+function loadImagesFromLocalStorage() {
+    const imageIds = ['character-photo1', 'couple-photo', 'character-photo2'];
+    
+    imageIds.forEach(id => {
+        const savedImage = localStorage.getItem('love_' + id);
+        if (savedImage) {
+            document.getElementById(id).src = savedImage;
+            
+            // Também atualizar as pré-visualizações nas configurações
+            const previewId = id === 'character-photo1' ? 'preview1' : 
+                             id === 'couple-photo' ? 'preview2' : 'preview3';
+            if (document.getElementById(previewId)) {
+                document.getElementById(previewId).src = savedImage;
+            }
+        }
+    });
+}
+
 // Criar estrelas de fundo
 function createStars() {
     const starsContainer = document.getElementById('stars');
