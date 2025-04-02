@@ -98,7 +98,7 @@
 
     <!-- NOVA PÁGINA 9 - Introdução aos 10 motivos -->
     <div class="page" id="page9">
-        <div class="glowing-text">Veja agora 10 motivos do por que eu amo você</div>
+        <div class="glowing-text">Veja agora 10 motivos do por que eu amo você:</div>
         <button class="btn" onclick="showPage(10)" style="margin-top: 50px;">Continuar</button>
     </div>
 
