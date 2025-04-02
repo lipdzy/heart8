@@ -96,19 +96,34 @@ p {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
 }
+/* Modified photo container style for responsiveness */
 .photo-container {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 1;
     border-radius: 15px;
     overflow: hidden;
     margin: 20px 0;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
     position: relative;
 }
+/* Modified image style to support any image size */
 .photo-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+}
+/* Added media queries for responsive design */
+@media (max-width: 480px) {
+    .photo-container {
+        max-width: 280px;
+    }
+}
+@media (min-width: 768px) {
+    .photo-container {
+        max-width: 400px;
+    }
 }
 .options {
     display: flex;
@@ -128,7 +143,8 @@ p {
     color: #ffffff;
 }
 .spotify-embed {
-    width: 280px;
+    width: 100%;
+    max-width: 280px;
     height: 80px;
     margin: 20px 0;
     border-radius: 15px;
@@ -137,6 +153,7 @@ p {
 }
 .heart-animation-container {
     width: 100%;
+    max-width: 500px;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -171,15 +188,127 @@ p {
 }
 #python-heart {
     width: 100%;
-    height: 400px;
+    height: 100%;
     border: none;
     border-radius: 15px;
     box-shadow: none;
 }
 
-/* comentario do css */
+/* Adiciona comentários no CSS para melhorar a clareza */
 .section-comment {
     font-style: italic;
     opacity: 0.7;
     margin: 10px 0;
+}
+
+/* Estilo para o texto brilhante */
+.glowing-text {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 
+                0 0 10px #fff, 
+                0 0 15px #ffffff, 
+                0 0 20px #ffffff, 
+                0 0 25px #ffffff,  
+                0 0 30px #ffffff, 
+                0 0 35px #ffffff;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 
+                    0 0 10px #fff, 
+                    0 0 15px #ffffff, 
+                    0 0 20px #ffffff, 
+                    0 0 25px #ffffff, 
+                    0 0 30px #ffffff,  
+                    0 0 35px #ffffff;
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 
+                    0 0 20px #fff, 
+                    0 0 30px #ff69b4, 
+                    0 0 40px #ff69b4, 
+                    0 0 50px #ff69b4, 
+                    0 0 60px #ff69b4, 
+                    0 0 70px #ff69b4;
+    }
+}
+
+/* Estilo para as razões de amor - ajustado para mobile */
+.love-reason {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.love-reason h3 {
+    font-size: 1.3rem;
+    color: #ff69b4;
+    margin-bottom: 8px;
+    text-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+}
+
+.love-reason p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.reason-number {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 50%;
+    background-color: #ff69b4;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-right: 8px;
+    text-align: center;
+}
+
+.navigation-btns {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto 0;
+}
+
+/* Ajustes responsivos para diferentes tamanhos de tela */
+@media (max-width: 360px) {
+    .love-reason h3 {
+        font-size: 1.1rem;
+    }
+    
+    .love-reason p {
+        font-size: 0.85rem;
+    }
+    
+    .reason-number {
+        width: 22px;
+        height: 22px;
+        line-height: 22px;
+        font-size: 0.8rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Para telas médias (maiores que celulares) */
+@media (min-width: 480px) {
+    .love-reason p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
 }
