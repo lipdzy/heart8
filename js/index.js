@@ -1,8 +1,14 @@
+// ===== CONFIGURAÇÕES (EDITE AQUI) =====
+
 // Data de início do relacionamento (formato: ano, mês-1, dia)
+// Observação: o mês começa em 0, então janeiro=0, fevereiro=1, etc.
 const DATA_INICIO_RELACIONAMENTO = new Date(2022, 0, 1); // 1 de janeiro de 2022
+
+// =====  FIM DAS CONFIGURAÇÕES  =====
 
 // Variáveis globais
 let relationshipStartDate = DATA_INICIO_RELACIONAMENTO;
+let heartIntervals = {};
 
 // Função para mostrar uma página específica
 function showPage(pageNumber) {
@@ -16,8 +22,74 @@ function showPage(pageNumber) {
         const heartFrame = document.getElementById('python-heart');
         heartFrame.src = heartFrame.src;
     }
+    
+    // NOVO: Iniciar a animação de corações flutuantes para as páginas 10, 11 e 12
+    if (pageNumber === 10 || pageNumber === 11 || pageNumber === 12) {
+        // Limpar todos os intervalos de corações existentes
+        Object.values(heartIntervals).forEach(interval => clearInterval(interval));
+        heartIntervals = {};
+        
+        // Iniciar a animação para a página atual
+        heartIntervals[pageNumber] = startFloatingHearts(pageNumber);
+    } else {
+        // Para outras páginas, limpar todos os intervalos
+        Object.values(heartIntervals).forEach(interval => clearInterval(interval));
+        heartIntervals = {};
+    }
 }
 
+// NOVA FUNÇÃO: Criar e animar corações flutuantes
+function startFloatingHearts(pageNumber) {
+    const page = document.getElementById(`page${pageNumber}`);
+    const heartsContainer = document.getElementById(`hearts-container-${pageNumber}`);
+    
+    // Limpar corações antigos
+    while (heartsContainer && heartsContainer.firstChild) {
+        heartsContainer.removeChild(heartsContainer.firstChild);
+    }
+    
+    // Criar novos corações em intervalos regulares
+    return setInterval(() => {
+        if (!page.classList.contains('active')) return;
+        
+        // Criar um novo coração
+        const heart = document.createElement('div');
+        heart.classList.add('floating-heart');
+        heart.innerHTML = '❤';
+        
+        // Variações de cor rosa
+        const colors = [
+            'rgba(255, 105, 180, 0.4)', // Rosa claro transparente
+            'rgba(255, 20, 147, 0.4)',  // Rosa médio transparente
+            'rgba(219, 112, 147, 0.4)', // Rosa escuro transparente
+            'rgba(255, 182, 193, 0.4)'  // Rosa bebê transparente
+        ];
+        
+        // Tamanho aleatório
+        const size = Math.floor(Math.random() * 30) + 15; // 15px a 45px
+        
+        // Posição aleatória
+        const posX = Math.floor(Math.random() * window.innerWidth);
+        const posY = Math.floor(Math.random() * window.innerHeight);
+        
+        // Aplicar estilos
+        heart.style.fontSize = `${size}px`;
+        heart.style.left = `${posX}px`;
+        heart.style.top = `${posY}px`;
+        heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+        
+        // Adicionar à página
+        page.appendChild(heart);
+        
+        // Remover o coração após a animação
+        setTimeout(() => {
+            if (heart && heart.parentNode) {
+                heart.parentNode.removeChild(heart);
+            }
+        }, 3000);
+        
+    }, 500); // Criar um novo coração a cada 500ms
+}
 // Função para carregar configurações do localStorage (fallback)
 function loadSettingsFromLocalStorage() {
     // Carregar URL do Spotify
@@ -60,7 +132,6 @@ function loadImagesFromLocalStorage() {
         }
     });
 }
-
 // Criar estrelas de fundo
 function createStars() {
     const starsContainer = document.getElementById('stars');

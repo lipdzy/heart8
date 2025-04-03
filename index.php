@@ -91,7 +91,7 @@
     <div class="page" id="page8">
         <h2>Meu amor por você cresce a cada dia, assim como esse coração ❤</h2>
         <div class="heart-animation-container" style="box-shadow: none;">
-            <iframe id="python-heart" src="heart2.html" width="100%" height="100%" frameborder="0" style="box-shadow: none;"></iframe>
+            <iframe id="python-heart" src="heart3.html" width="100%" height="100%" frameborder="0" style="box-shadow: none;"></iframe>
         </div>
         <button class="btn" onclick="showPage(9)">Veja mais</button>
     </div>
@@ -104,6 +104,9 @@
 
     <!-- NOVA PÁGINA 10 - Motivos 1, 2 e 3 -->
     <div class="page" id="page10">
+        <!-- Container para os corações flutuantes da página 10 -->
+        <div class="hearts-container" id="hearts-container-10"></div>
+        
         <div class="love-reason">
             <h3><span class="reason-number">1</span> Seu Sorriso</h3>
             <p>Seu sorriso ilumina qualquer ambiente e me faz esquecer todos os problemas. Quando você sorri, o mundo todo parece um lugar melhor. É como se o sol brilhasse só para mim.</p>
@@ -126,6 +129,9 @@
 
     <!-- NOVA PÁGINA 11 - Motivos 4, 5, 6 e 7 -->
     <div class="page" id="page11">
+        <!-- Container para os corações flutuantes da página 11 -->
+        <div class="hearts-container" id="hearts-container-11"></div>
+        
         <div class="love-reason">
             <h3><span class="reason-number">4</span> Seu Beijo</h3>
             <p>Seus beijos me transportam para outro mundo. Cada beijo é único e especial, mesmo depois de tanto tempo juntos. São doces, quentes e cheios de paixão.</p>
@@ -154,6 +160,9 @@
 
     <!-- NOVA PÁGINA 12 - Motivos 8, 9 e 10 -->
     <div class="page" id="page12">
+        <!-- Container para os corações flutuantes da página 12 -->
+        <div class="hearts-container" id="hearts-container-12"></div>
+        
         <div class="love-reason">
             <h3><span class="reason-number">8</span> Seu Cheiro</h3>
             <p>Seu cheiro é inconfundível e me traz uma sensação de paz e conforto. É como voltar para casa depois de um longo dia. Me acalma, me acolhe e me faz querer ficar perto de você para sempre.</p>
