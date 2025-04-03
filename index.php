@@ -91,7 +91,7 @@
     <div class="page" id="page8">
         <h2>Meu amor por você cresce a cada dia, assim como esse coração ❤</h2>
         <div class="heart-animation-container" style="box-shadow: none;">
-            <iframe id="python-heart" src="heart3.html" width="100%" height="100%" frameborder="0" style="box-shadow: none;"></iframe>
+            <iframe id="python-heart" src="heart2.html" width="100%" height="100%" frameborder="0" style="box-shadow: none;"></iframe>
         </div>
         <button class="btn" onclick="showPage(9)">Veja mais</button>
     </div>
