@@ -12,7 +12,7 @@
 
     <!-- Página 1 -->
     <div class="page active" id="page1">
-        <h1>Mais um ano de namoro juntos! ❤</h1>
+        <h1>Veja a seguir uma declaração que preparei para eternizar este momento especial ❤</h1>
         <button class="btn" onclick="showPage(2)">Clique aqui para continuar</button>
     </div>
 
@@ -24,14 +24,14 @@
         </div>
         <h2>Você gostaria de ouvir nossa música?</h2>
         <div class="options">
-            <button class="btn" onclick="showPage(3)">Yes ❤</button>
-            <button class="btn" onclick="showPage(3)">no 😡</button>
+            <button class="btn" onclick="showPage(3)">Sim ❤</button>
+            <button class="btn" onclick="showPage(3)">Não 😡</button>
         </div>
     </div>
 
     <!-- Página 3 -->
     <div class="page" id="page3">
-        <h2>Te dedico cada verso dessa linda canção</h2>
+        <h2>Te dedico cada verso dessa linda canção 🎶</h2>
         <div class="spotify-embed">
             <!-- MÚSICA: Substituir o ID da música após /track/ -->
             <iframe src="https://open.spotify.com/embed/track/4vgU9MGJwhgBEtlO8mMN49?utm_source=generator" width="100%" height="100%" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
@@ -134,7 +134,7 @@
         
         <div class="love-reason">
             <h3><span class="reason-number">4</span> Seu Beijo</h3>
-            <p>Seus beijos me transportam para outro mundo. Cada beijo é único e especial, mesmo depois de tanto tempo juntos. São doces, quentes e cheios de paixão.</p>
+            <p>Seus beijos me transportam para outro mundo. Cada beijo é único e especial... doces, quentes e cheios de paixão.</p>
         </div>
         
         <div class="love-reason">
