@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    /* Fonte base alterada para Montserrat */
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -69,20 +70,27 @@ body {
 }
 
 h1 {
-    font-size: 1.0rem;
+    /* Fonte modificada para Dancing Script */
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
     margin-bottom: 30px;
     color: #ffffff;
     text-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
 }
 
 h2 {
-    font-size: 1.5rem;
+    /* Fonte modificada para Parisienne */
+    font-family: 'Parisienne', cursive;
+    font-size: 2rem;
     margin-bottom: 20px;
     color: #ffffff;
     text-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
 }
 
 p {
+    /* Mantendo Montserrat para legibilidade */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     font-size: 1.2rem;
     margin-bottom: 20px;
     max-width: 600px;
@@ -90,6 +98,9 @@ p {
 }
 
 .btn {
+    /* Fonte modificada para Poppins */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
     display: inline-block;
     padding: 12px 24px;
     background: linear-gradient(45deg, #ffffff, #ffffff);
@@ -157,6 +168,8 @@ p {
 }
 
 .timer div {
+    /* Fonte modificada para Poppins */
+    font-family: 'Poppins', sans-serif;
     margin: 10px 0;
     font-size: 1.3rem;
     color: #ffffff;
@@ -226,37 +239,30 @@ p {
     margin: 10px 0;
 }
 
-/* Estilo para o texto brilhante */
+/* Estilo modificado para o texto brilhante com efeito neon reduzido */
 .glowing-text {
-    font-size: 1.5rem;
+    font-family: 'Sacramento', cursive;
+    font-size: 2.2rem;
     color: #fff;
-    text-shadow: 0 0 5px #fff, 
-                0 0 10px #fff, 
-                0 0 15px #ffffff, 
-                0 0 20px #ff69b4,
-                0 0 25px #ff69b4,  
-                0 0 30px #ff69b4, 
-                0 0 35px #ff69b4;
+    text-shadow: 0 0 3px #fff, 
+                0 0 5px #fff, 
+                0 0 8px #ffffff;
 }
 
 @keyframes glow {
     from {
+        text-shadow: 0 0 3px #fff, 
+                    0 0 5px #fff, 
+                    0 0 8px #ffffff, 
+                    0 0 10px #ffffff, 
+                    0 0 15px #ffffff;
+    }
+    to {
         text-shadow: 0 0 5px #fff, 
                     0 0 10px #fff, 
                     0 0 15px #ffffff, 
-                    0 0 20px #ff69b4, 
-                    0 0 25px #ff69b4, 
-                    0 0 30px #ff69b4,  
-                    0 0 35px #ff69b4;
-    }
-    to {
-        text-shadow: 0 0 10px #fff, 
-                    0 0 20px #fff, 
-                    0 0 30px #ff69b4, 
-                    0 0 40px #ff69b4, 
-                    0 0 50px #ff69b4, 
-                    0 0 60px #ff69b4, 
-                    0 0 70px #ff69b4;
+                    0 0 20px #ffffff, 
+                    0 0 30px #ffffff;
     }
 }
 
@@ -267,13 +273,17 @@ p {
 }
 
 .love-reason h3 {
-    font-size: 1.3rem;
+    /* Fonte modificada para Dancing Script */
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
     color: #ff69b4;
     margin-bottom: 8px;
     text-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
 }
 
 .love-reason p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     font-size: 0.95rem;
     line-height: 1.4;
     max-width: 600px;
@@ -306,7 +316,7 @@ p {
 /* Ajustes responsivos para diferentes tamanhos de tela */
 @media (max-width: 360px) {
     .love-reason h3 {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
     
     .love-reason p {
@@ -321,7 +331,7 @@ p {
     }
     
     h2 {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
     
     .btn {

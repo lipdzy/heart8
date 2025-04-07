@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Declaração de Amor</title>
+    <!-- Adicionando importações de fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&family=Parisienne&family=Poppins:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,7 +24,7 @@
     <div class="page" id="page2">
         <div class="photo-container">
             <!-- FOTO 1: Substitua o src pela URL da sua imagem -->
-            <img src="C:\Users\USER\OneDrive\Imagens\hello5.jpg" alt="Personagem">
+            <img src="C:\Users\USER\OneDrive\Imagens\hellospotify.jpg" alt="Personagem">
         </div>
         <h2>Você gostaria de ouvir nossa música?</h2>
         <div class="options">
@@ -34,7 +38,7 @@
         <h2>Te dedico cada verso dessa linda canção 🎶</h2>
         <div class="spotify-embed">
             <!-- MÚSICA: Substituir o ID da música após /track/ -->
-            <iframe src="https://open.spotify.com/embed/track/4vgU9MGJwhgBEtlO8mMN49?utm_source=generator" width="100%" height="100%" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <iframe src="https://open.spotify.com/embed/track/5lLKJdDPy7qbsta6d88lKE?utm_source=generator" width="100%" height="100%" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
         <button class="btn" onclick="showPage(4)">Clique aqui para continuar</button>
     </div>
@@ -56,12 +60,12 @@
     <div class="page" id="page5">
         <div class="photo-container">
             <!-- FOTO 3: Substituir o src pela URL da sua terceira imagem -->
-            <img src="C:\Users\USER\OneDrive\Imagens\hhspotify.jpg" alt="Personagem">
+            <img src="C:\Users\USER\OneDrive\Imagens\hhpintrest.jpg" alt="Personagem">
         </div>
         <h2>Você gostaria de ver a quanto tempo estamos juntos?</h2>
         <div class="options">
-            <button class="btn" onclick="showPage(6)">yes 🥰</button>
-            <button class="btn" onclick="showPage(6)">no 🥺</button>
+            <button class="btn" onclick="showPage(6)">Sim 🥰</button>
+            <button class="btn" onclick="showPage(6)">Não 🥺</button>
         </div>
     </div>
 
@@ -91,7 +95,7 @@
     <div class="page" id="page8">
         <h2>Meu amor por você cresce a cada dia, assim como esse coração ❤</h2>
         <div class="heart-animation-container" style="box-shadow: none;">
-            <iframe id="python-heart" src="heart2.html" width="100%" height="100%" frameborder="0" style="box-shadow: none;"></iframe>
+            <iframe id="python-heart" src="heart3.html" width="100%" height="100%" frameborder="0" style="box-shadow: none;"></iframe>
         </div>
         <button class="btn" onclick="showPage(9)">Veja mais</button>
     </div>
