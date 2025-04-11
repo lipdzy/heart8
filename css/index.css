@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Fonte base alterada para Montserrat */
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -30,11 +29,13 @@ body {
     opacity: 0;
     transition: opacity 1s ease;
     z-index: 1;
+    visibility: hidden;
 }
 
 .active {
     opacity: 1;
     z-index: 10;
+    visibility: visible;
 }
 
 .stars {
@@ -70,7 +71,6 @@ body {
 }
 
 h1 {
-    /* Fonte modificada para Dancing Script */
     font-family: 'Dancing Script', cursive;
     font-size: 1.8rem;
     margin-bottom: 30px;
@@ -79,7 +79,6 @@ h1 {
 }
 
 h2 {
-    /* Fonte modificada para Parisienne */
     font-family: 'Parisienne', cursive;
     font-size: 2rem;
     margin-bottom: 20px;
@@ -88,7 +87,6 @@ h2 {
 }
 
 p {
-    /* Mantendo Montserrat para legibilidade */
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 1.2rem;
@@ -98,7 +96,6 @@ p {
 }
 
 .btn {
-    /* Fonte modificada para Poppins */
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     display: inline-block;
@@ -120,11 +117,10 @@ p {
     box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
 }
 
-/* Modified photo container style for responsiveness */
 .photo-container {
     width: 100%;
     max-width: 360px;
-    aspect-ratio: 1;
+    height: 360px; 
     border-radius: 15px;
     overflow: hidden;
     margin: 20px 0;
@@ -132,24 +128,51 @@ p {
     position: relative;
 }
 
-/* Modified image style to support any image size */
 .photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+}
+
+#page4 .photo-container {
+    width: 100%;
+    max-width: 450px;  
+    height: 300px;     
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 20px 0;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+#page4 .photo-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
-/* Added media queries for responsive design */
 @media (max-width: 480px) {
     .photo-container {
-        max-width: 280px;
+        max-width: 400px;
+        height: 360px;
+    }
+    
+    #page4 .photo-container {
+        max-width: 380px;
+        height: 250px;
     }
 }
 
 @media (min-width: 768px) {
     .photo-container {
         max-width: 400px;
+        height: 400px;
+    }
+    
+    #page4 .photo-container {
+        max-width: 300px;
+        height: 600px;
     }
 }
 
@@ -162,17 +185,83 @@ p {
 
 .timer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
     margin: 30px 0;
+    max-width: 90%;
 }
 
-.timer div {
-    /* Fonte modificada para Poppins */
+.time-box {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.3), rgba(255, 255, 255, 0.1));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 15px;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+    transition: all 0.3s ease;
+}
+
+.time-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 105, 180, 0.5);
+}
+
+.time-value {
     font-family: 'Poppins', sans-serif;
-    margin: 10px 0;
-    font-size: 1.3rem;
-    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 5px;
+    text-shadow: 0 0 8px rgba(255, 105, 180, 0.7);
+}
+
+.time-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .timer {
+        gap: 10px;
+    }
+    
+    .time-box {
+        min-width: 80px;
+        padding: 10px;
+    }
+    
+    .time-value {
+        font-size: 1.5rem;
+    }
+    
+    .time-label {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .timer {
+        gap: 8px;
+    }
+    
+    .time-box {
+        min-width: 70px;
+        padding: 8px;
+    }
+    
+    .time-value {
+        font-size: 1.3rem;
+    }
 }
 
 .spotify-embed {
@@ -232,14 +321,12 @@ p {
     box-shadow: none;
 }
 
-/* Adiciona comentários no CSS para melhorar a clareza */
 .section-comment {
     font-style: italic;
     opacity: 0.7;
     margin: 10px 0;
 }
 
-/* Estilo modificado para o texto brilhante com efeito neon reduzido */
 .glowing-text {
     font-family: 'Sacramento', cursive;
     font-size: 2.2rem;
@@ -247,33 +334,28 @@ p {
     text-shadow: 0 0 3px #fff, 
                 0 0 5px #fff, 
                 0 0 8px #ffffff;
+    animation: glow 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
     from {
         text-shadow: 0 0 3px #fff, 
                     0 0 5px #fff, 
-                    0 0 8px #ffffff, 
-                    0 0 10px #ffffff, 
-                    0 0 15px #ffffff;
+                    0 0 8px #ffffff;
     }
     to {
         text-shadow: 0 0 5px #fff, 
                     0 0 10px #fff, 
-                    0 0 15px #ffffff, 
-                    0 0 20px #ffffff, 
-                    0 0 30px #ffffff;
+                    0 0 15px #ffffff;
     }
 }
 
-/* Estilo para as razões de amor - ajustado para mobile */
 .love-reason {
     margin: 15px 0;
     text-align: center;
 }
 
 .love-reason h3 {
-    /* Fonte modificada para Dancing Script */
     font-family: 'Dancing Script', cursive;
     font-size: 1.5rem;
     color: #ff69b4;
@@ -313,7 +395,6 @@ p {
     margin: 20px auto 0;
 }
 
-/* Ajustes responsivos para diferentes tamanhos de tela */
 @media (max-width: 360px) {
     .love-reason h3 {
         font-size: 1.3rem;
@@ -340,7 +421,6 @@ p {
     }
 }
 
-/* Para telas médias (maiores que celulares) */
 @media (min-width: 480px) {
     .love-reason p {
         font-size: 1rem;
@@ -348,7 +428,6 @@ p {
     }
 }
 
-/* NOVO: Estilo para os corações rosa flutuantes */
 .floating-heart {
     position: absolute;
     font-size: 20px;
@@ -372,4 +451,14 @@ p {
         opacity: 0;
         transform: scale(0.5);
     }
+}
+
+.hearts-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 2;
 }
